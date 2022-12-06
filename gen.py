@@ -43,7 +43,10 @@ if group is not None:
 # write the board to the input of the program
 input_str = '\n'.join(''.join(str(x) for x in row) for row in board) + '\n'
 input_str = input_str.encode("utf-8")
+open(f"wyniki/{ROWS}x{COLUMNS}/{TYPES}.in","w+b").write(input_str)
+open(f"wyniki/{ROWS}x{COLUMNS}/{TYPES}.arg","w+").write(f"{group[1][0][0]} {group[1][0][1]}")
 # run the program and get the output
-cmd = f"valgrind --leak-check=full -q --error-exitcode=1 ./program {group[1][0][0]} {group[1][0][1]}"
+cmd = f"./program {group[1][0][0]} {group[1][0][1]}"
 output_str = subprocess.check_output(cmd.split(" "), input=input_str)
-print(output_str.decode('utf-8'))
+open(f"wyniki/{ROWS}x{COLUMNS}/{TYPES}.out","w+b").write(output_str)
+#print(output_str.decode('utf-8'))

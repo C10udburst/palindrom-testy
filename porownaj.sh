@@ -11,10 +11,12 @@ for t in 1 2 3 7 10; do
             cat "wyniki/${w}x${k}/${t}.in" | valgrind --leak-check=full -q --error-exitcode=1 ./program ${args} > "wyniki/${w}x${k}/${t}.1.out"
             if [[ "$?" -ne 0 ]] ; then
                 echo -e "\033[0;31mBłąd wykonania\033[0m"
+                exit 1
             fi
             diff "wyniki/${w}x${k}/${t}.out" "wyniki/${w}x${k}/${t}.1.out"
             if [[ "$?" -ne 0 ]] ; then
                 echo -e "\033[0;31mInny wynik\033[0m"
+                exit 1
             fi
             ((i++))
         done

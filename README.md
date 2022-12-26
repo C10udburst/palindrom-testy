@@ -17,3 +17,11 @@ cd wdp-testy
 cp SCIEZKA/DO/KODU.c main.c
 bash ./porownaj.sh
 ```
+
+## [Życie](https://github.com/C10udburst/wdp-testy/tree/life)
+```bash
+git clone -b life https://github.com/C10udburst/wdp-testy.git
+cd wdp-testy
+cp SCIEZKA/DO/KODU.c main.c
+bash ./porownaj.sh
+```

@@ -1,11 +1,7 @@
 #!/bin/bash
-echo -e "Odpalic z valgrind? \033[1m(w chuj wolno)\033[0m"
-echo -n "[T]ak/[N]ie "
-read yn
-case $yn in
-    T*|t*|Y*|y*|1 ) valgrind=1;;
-    * ) valgrind=0;;
-esac
+valgrind=0
+dialog --yesno "Odpalic z valgrindem?\n(W chuj wolno, ale dziala na students)\n\nBez valgrinda trzeba polaczyc sie z ktoryms z labowych komputerow." 20 60 && valgrind=1
+clear
 if [[ "$valgrind" -ne 0 ]] ; then
     gcc @opt main.c -o main
 else

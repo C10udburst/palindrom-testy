@@ -26,7 +26,7 @@ cp SCIEZKA/DO/KODU.c main.c
 bash ./porownaj.sh
 ```
 
-##[PW-Lockfree](https://github.com/C10udburst/wdp-testy/tree/pw-lockfree)
+## [PW-Lockfree](https://github.com/C10udburst/wdp-testy/tree/pw-lockfree)
 ```bash
 git clone https://github.com/C10udburst/uw-testy.git -b pw-lockfree
 cp SCIEZKA/DO/PROJEKTU/*.{h,c} ./uw-testy/
